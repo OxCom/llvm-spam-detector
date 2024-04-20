@@ -12,5 +12,4 @@ RUN python init.py
 
 EXPOSE 80
 
-#
 CMD ["gunicorn","--config", "gunicorn_config.py", "app:app"]
