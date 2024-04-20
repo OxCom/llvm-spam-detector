@@ -5,7 +5,7 @@ from transformers import pipeline
 app = Flask(__name__)
 
 def analyze_text(input: str):
-    pipe = pipeline("text-classification", model="Titeiiko/OTIS-Official-Spam-Model")
+    pipe = pipeline("text-classification", model="mshenoda/roberta-spam")
     x = pipe(input)[0]
 
     if x["label"] == "LABEL_0":
