@@ -8,17 +8,12 @@ jobs:
   test-dockerfile:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [debian, alpine]
-
     steps:
       - uses: actions/checkout@v4
       - uses: hadolint/hadolint-action@v3.1.0
         with:
           ignore: DL3008,DL3018,SC2086,DL3033,DL3006
-          dockerfile: ./${{ matrix.os }}/Dockerfile
+          dockerfile: ./Dockerfile
 
   build:
     needs:
